@@ -1,0 +1,39 @@
+package jAVASWING;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
+public class JAVASWING {
+
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("My First Swing Program");
+
+        JLabel label = new JLabel("Enter your name:");
+        JTextField textField = new JTextField();
+        JButton button = new JButton("Click Me");
+
+        label.setBounds(50, 50, 120, 30);
+        textField.setBounds(170, 50, 150, 30);
+        button.setBounds(120, 100, 100, 30);
+
+        frame.add(label);
+        frame.add(textField);
+        frame.add(button);
+
+        frame.setSize(400, 250);
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+        button.addActionListener(e -> {
+
+            String name = textField.getText();
+
+            JOptionPane.showMessageDialog(frame, "Hello " + name);
+        });
+    }
+}
